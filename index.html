@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hafij Julian Jaya — Profil & Kenangan</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- AOS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    /* --- Warna tema: Senja Jingga (hangat, lembut, sunyi) --- */
+    :root{
+      --sun-1: #ff8a65;   /* jingga lembut */
+      --sun-2: #ff7043;   /* oranye hangat */
+      --dusk:  #2b2a33;   /* latar malam ringan */
+      --muted: rgba(255,255,255,0.85);
+      --glass: rgba(255,255,255,0.06);
+    }
+    html,body{
+      height:100%;
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #fce4d6 0%, #ffd7b1 22%, #ffb285 45%, #6b4750 100%);
+      color: #1b1b1b;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background: linear-gradient(180deg, rgba(255,255,255,0.6), rgba(255,255,255,0.35));
+      box-shadow: 0 4px 24px rgba(39, 20, 15, 0.08);
+      backdrop-filter: blur(6px);
+    }
+    .brand { font-weight:700; color:#5b2a2a; letter-spacing:0.6px; }
+
+    /* HERO */
+    .hero {
+      min-height: 80vh;
+      display:flex;
+      align-items:center;
+      padding:5.5rem 1.25rem 3.5rem;
+    }
+    .hero-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,248,240,0.85));
+      border-radius:18px;
+      padding:28px;
+      box-shadow: 0 18px 50px rgba(59,14,14,0.12);
+      border: 1px solid rgba(0,0,0,0.02);
+    }
+    .profile-img {
+      width:160px;
+      height:160px;
+      border-radius:50%;
+      object-fit:cover;
+      border:6px solid rgba(255,255,255,0.9);
+      box-shadow: 0 10px 30px rgba(99,35,35,0.12);
+    }
+    h1.title {
+      color:#5b2a2a;
+      font-size:2.25rem;
+      margin-bottom:0.25rem;
+      letter-spacing:0.4px;
+    }
+    .muted { color: #6b4a45; }
+    .lead-poem {
+      color: #5c3a36;
+      font-style: italic;
+      margin-top:0.6rem;
+      line-height:1.7;
+    }
+
+    /* SECTIONS */
+    .section {
+      padding:4.2rem 0;
+    }
+    .card-soft {
+      background: rgba(255,255,255,0.88);
+      border-radius:12px;
+      padding:1.25rem;
+      border: 1px solid rgba(0,0,0,0.03);
+    }
+    .memory {
+      background: linear-gradient(90deg, rgba(255,238,230,0.9), rgba(255,247,240,0.95));
+      padding:1.1rem 1.25rem;
+      border-radius:10px;
+      border:1px solid rgba(0,0,0,0.02);
+      color:#5b2a2a;
+      font-style: italic;
+    }
+
+    /* BIODATA */
+    .biodata dt { color:#8a5b55; font-weight:600; }
+    .biodata dd { margin-left:0; color:#42241f; }
+
+    /* PORTFOLIO CARDS */
+    .proj-img {
+      height:160px;
+      object-fit:cover;
+      border-radius:8px;
+      border:1px solid rgba(0,0,0,0.03);
+    }
+
+    /* FOOTER */
+    footer { padding:2rem 0; text-align:center; color:#2f1f1f; }
+
+    /* RESPONSIVE TWEAKS */
+    @media (max-width:767px){
+      .hero { padding-top:6.5rem; }
+      .profile-img { width:120px; height:120px; }
+      h1.title { font-size:1.7rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand brand" href="#home">HAFIJ JULIAN JAYA</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse">
+        <i class="bi bi-list" style="font-size:1.1rem; color:#5b2a2a;"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navCollapse">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link muted" href="#about">Tentang</a></li>
+          <li class="nav-item"><a class="nav-link muted" href="#biodata">Biodata</a></li>
+          <li class="nav-item"><a class="nav-link muted" href="#works">Karya</a></li>
+          <li class="nav-item"><a class="nav-link muted" href="#memory">Kenangan</a></li>
+          <li class="nav-item"><a class="nav-link muted" href="#contact">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="home" class="hero">
+    <div class="container">
+      <div class="row align-items-center gy-4">
+        <div class="col-lg-5 text-center text-lg-start" data-aos="fade-right">
+          <div class="hero-card">
+            <!-- GANTI FOTO: jika ingin tampilkan foto, ganti 'src' dengan URL foto atau path file lokal.
+                 blob:... dari WhatsApp biasanya tidak dapat dipakai langsung di HTML statis.
+                 Contoh: src="images/foto-hafij.jpg" -->
+            <img src="f382bf89-ce32-4df0-89d3-aed3873dcb41.jpg" alt="Foto Profil Hafij" class="profile-img mb-3" id="profileImage">
+            <h1 class="title">HAFIJ JULIAN JAYA</h1>
+            <div class="muted">Siswa — SMAN 10 GARUT</div>
+
+            <p class="lead-poem mt-3">
+              “Di senja ini aku menulis namamu sebagai nyanyian yang tak lagi menjadi rumah.  
+              Kau pernah berjanji: jika bukan denganku, bukan untuk siapa pun.  
+              Lalu senyummu dicuri waktu, dan aku belajar menampung amarah dalam sisa-sisa harapan.”
+            </p>
+
+            <div class="mt-3">
+              <a href="#memory" class="btn btn-warning btn-sm me-2"><i class="bi bi-book-heart"></i> Baca Kenangan</a>
+              <a href="#contact" class="btn btn-outline-dark btn-sm"><i class="bi bi-envelope"></i> Hubungi</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7" data-aos="fade-left">
+          <div class="card-soft">
+            <h5 class="mb-2">Sebuah Pembukaan</h5>
+            <p class="muted">
+              Halaman ini kutulis sebagai tumpuan; ruang di mana rindu dan amarah menumpuk menjadi cerita yang bisa kubaca ulang.  
+              Di sini kubiarkan kenangan bernafas: tidak untuk kembali, melainkan agar baunya tetap hidup — sebagai pelajaran dan peringatan.
+            </p>
+
+            <hr />
+
+            <div class="row">
+              <div class="col-md-6">
+                <h6 class="mb-1">Nada</h6>
+                <p class="muted">Senja jingga — hangat, lembut, namun menyisakan luka sunyi.</p>
+              </div>
+              <div class="col-md-6">
+                <h6 class="mb-1">Sifat Kisah</h6>
+                <p class="muted">Janji patah, harap yang berubah, dan serbuk kebencian yang halus.</p>
+              </div>
+            </div>
+
+            <hr />
+
+            <h6 class="mb-1">Sepenggal untuk yang pernah kubilang rumah</h6>
+            <p class="memory mb-0">
+              Kau berjanji seperti orang yang menata perahu di dermaga: penuh keputusan dan keyakinan.  
+              Namun tiba-tiba perahu itu melaju pada kapal lain. Aku berdiri, menatap garis-garis jingga —  
+              mencatat setiap bayang yang kau tinggalkan, menaruh amarah di saku yang kemudian kudinginkan menjadi doa.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container" data-aos="fade-up">
+      <div class="row gy-4 align-items-center">
+        <div class="col-lg-6">
+          <h3>Tentang saya</h3>
+          <p class="muted">
+            Nama lengkap: <strong>HAFIJ JULIAN JAYA</strong>.  
+            Lahir di Garut pada <strong>07 Juli 2008</strong>. Saat ini menempuh pendidikan di <strong>SMAN 10 GARUT</strong>, berdiam di kota Garut.
+            Hidup bagi saya adalah perjalanan belajar — dari pelajaran sekolah sampai pelajaran hati yang paling perih: kehilangan kepercayaan.
+          </p>
+
+          <h5 class="mt-4">Sedikit tentang cara saya melihat dunia</h5>
+          <ul class="muted">
+            <li>Membangun kejujuran, karena kejujuran adalah lantai yang kukenal.</li>
+            <li>Menerima sakit sebagai guru, bukan sebagai akhir cerita.</li>
+            <li>Menyimpan kenangan dalam kotak yang diberi lubang agar tidak penuh dengan amarah saja.</li>
+          </ul>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card-soft">
+            <h5>Catatan Kecil</h5>
+            <p class="muted mb-0">
+              Jika kau pernah merasakan janji yang patah, halaman ini mungkin terasa seperti rumah yang rapuh — namun tetap ada atap.
+              Baca perlahan, dan biarkan senja ini jadi teman ketika malam datang.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIODATA -->
+  <section id="biodata" class="section bg-light">
+    <div class="container" data-aos="fade-up">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <div class="card-soft">
+            <h5 class="mb-3">Biodata</h5>
+            <dl class="biodata">
+              <dt>Nama Lengkap</dt>
+              <dd>HAFIJ JULIAN JAYA</dd>
+
+              <dt>Pendidikan</dt>
+              <dd>SMAN 10 GARUT</dd>
+
+              <dt>Tempat & Tanggal Lahir</dt>
+              <dd>Garut, 07 Juli 2008</dd>
+
+              <dt>Domisili</dt>
+              <dd>Garut, Indonesia</dd>
+
+              <dt>Email</dt>
+              <dd><a href="mailto:hafijjulianjaya@gmail.com" class="text-decoration-none">hafijjulianjaya@gmail.com</a></dd>
+
+              <dt>Media Sosial</dt>
+              <dd>
+                <a href="https://instagram.com/avizzzs" target="_blank" class="me-2 text-decoration-none muted">
+                  <i class="bi bi-instagram"></i> @avizzzs
+                </a>
+              </dd>
+            </dl>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="card-soft">
+            <h5 class="mb-3">Perjalanan Singkat & Karya</h5>
+            <p class="muted">
+              (Isi dengan kegiatan sekolah, proyek, tulisan, atau karya visual yang ingin ditampilkan.)  
+              Sebagai pelajar, Hafij aktif menulis puisi pendek, membuat catatan reflektif, dan belajar desain sederhana untuk mengekspresikan perasaannya.
+            </p>
+
+            <div class="row gx-3 gy-3 mt-3">
+              <div class="col-md-6">
+                <div class="p-3 card-soft h-100">
+                  <h6>Esai & Puisi</h6>
+                  <small class="muted">Kumpulan tulisan pribadi tentang kehilangan dan harapan.</small>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="p-3 card-soft h-100">
+                  <h6>Proyek Sekolah</h6>
+                  <small class="muted">Presentasi, tugas kelompok, dan proyek kreatif.</small>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKS / PORTFOLIO -->
+  <section id="works" class="section">
+    <div class="container" data-aos="fade-up">
+      <h4 class="mb-4">Karya & Jejak</h4>
+      <p class="muted">Beberapa contoh karya dan catatan yang bisa kamu tambahkan: puisi, esai, atau desain poster.</p>
+
+      <div class="row mt-3 g-3">
+        <div class="col-md-4">
+          <div class="card-soft h-100">
+            <img src="download.jpg" class="proj-img mb-3" alt="Karya 1">
+            <h6>Puisi Sapardi Djoko Damono</h6>
+            <small class="muted">Aku ingin mencintaimu dengan sederhana,
+dengan kata yang tak sempat diucapkan kayu kepada api yang menjadikannya abu.
+Aku ingin mencintaimu dengan sederhana, dengan isyarat yang tak sempat disampaikan awan kepada hujan yang menjadikannya tiada.</small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-soft h-100">
+            <img src="apise.jpg" class="proj-img mb-3" alt="Karya 2">
+            <h6> Senja</h6>
+            <small class="muted">Di ufuk jingga, kita berdiri
+Mengiringi sang surya yang akan pergi
+Senja adalah akhir dari hari yang telah terlewati Seperti kita yang berpisah kini.</small>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card-soft h-100">
+            <img src="langit.jpg" class="proj-img mb-3" alt="Karya 3">
+            <h6>Langit dan Sekolah</h6>
+            <small class="muted">Di pagi cerah, langkah tergesa.
+Sekolah berdiri, menanti asa.
+Di balik jendela, langit biru terbentang. Menemani mimpi di setiap lembar buku.</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMORY / KENANGAN -->
+  <section id="memory" class="section bg-light">
+    <div class="container" data-aos="fade-up">
+      <h4 class="mb-3">Kenangan — Untuk yang pernah ku sebut rumah</h4>
+
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <div class="card-soft">
+            <p class="memory">
+              Dulu kau adalah alamat yang kuketuk saat hujan menggigit, tempat di mana aku menaruh hangat tanpa takut dicuri.  
+              Kau berjanji: jika bukan untukku, bukan untuk siapa pun. Janji itu kukira peta yang tak mungkin kuketik ulang,  
+              namun hidup sering menulis ulang peta tanpa izin. Saat kau berjalan bersama yang lain, sesuatu di dalamku pecah —  
+              bukan hanya harap yang pudar, tapi pula keyakinan bahwa setiap kata yang diucap memiliki beban.
+            </p>
+
+            <h6 class="mt-4">Antara Harap & Kebencian</h6>
+            <p class="muted">
+              Ada dua hal yang tumbuh bersisian: harap yang masih menunggu, dan kebencian yang lembut seperti abu.  
+              Aku biarkan harap menjadi pelita kecil di malam-malam panjang; kebencian kutaruh di lemari tertutup,  
+              agar tidak merusak bagian lain dari hatiku yang masih ingin mencintai.
+            </p>
+
+            <blockquote class="mt-3" style="border-left:4px solid rgba(255,112,67,0.25); padding-left:1rem; color:#5b2a2a;">
+              “Ketika kau bilang tak untuk yang lain, aku percaya. Ketika kata itu hancur, aku belajar menulis ulang batas antara percaya dan berhati-hati.”
+            </blockquote>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card-soft">
+            <h6>Jejak-Jejak Kecil</h6>
+            <ul class="muted">
+              <li>Mengamati senja sebagai saksi bisu.</li>
+              <li>Menyimpan foto tanpa membuka album lama.</li>
+              <li>Menulis surat yang tak pernah dikirim.</li>
+              <li>Belajar memaafkan, meski sulit.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container" data-aos="fade-up">
+      <h4 class="mb-3">Kontak</h4>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="card-soft">
+            <h6>Email</h6>
+            <p class="muted mb-1"><a href="mailto:hafijjulianjaya@gmail.com" class="text-decoration-none">hafijjulianjaya@gmail.com</a></p>
+
+            <h6 class="mt-3">Instagram</h6>
+            <p class="muted mb-1"><a href="https://instagram.com/avizzzs" target="_blank" class="text-decoration-none">@avizzzs</a></p>
+
+            <hr />
+
+            <p class="muted mb-0">Ingin mengirim pesan pribadi? Gunakan email di atas atau kirim DM lewat Instagram.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="card-soft">
+            <h6>Kirim Pesan Cepat</h6>
+            <!-- Simple contact form (mailto) -->
+            <form action="mailto:hafijjulianjaya@gmail.com" method="post" enctype="text/plain" onsubmit="alert('Form akan membuka aplikasi email Anda — jika tidak tersedia, kirim langsung ke hafijjulianjaya@gmail.com');">
+              <div class="mb-2">
+                <label class="form-label small">Nama</label>
+                <input type="text" class="form-control" name="Nama" placeholder="Namamu" required>
+              </div>
+              <div class="mb-2">
+                <label class="form-label small">Pesan</label>
+                <textarea class="form-control" name="Pesan" rows="4" placeholder="Tulis sesuatu..." required></textarea>
+              </div>
+              <button class="btn btn-warning btn-sm" type="submit"><i class="bi bi-send"></i> Kirim via Email</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <small>
+        © <strong>HAFIJ JULIAN JAYA</strong> — Garut • 07 Juli 2008 • Tema: Senja Jingga.  
+        Halaman ini berisi narasi pribadi; gunakan dengan bijak.
+      </small>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
+</body>
+</html>
